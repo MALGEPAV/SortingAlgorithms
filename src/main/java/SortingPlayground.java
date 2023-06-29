@@ -9,7 +9,8 @@ public class SortingPlayground {
 
     public static void main(String[] args) {
         fillRandom();
-
+        System.out.println("Сортируем случайный массив из "+a.length+" натуральных чисел:");
+        System.out.println("Быстрая сортировка:");
         long begin = System.currentTimeMillis();
         quicksort(0, a.length);
         long end = System.currentTimeMillis();
@@ -17,7 +18,8 @@ public class SortingPlayground {
         //System.out.println(Arrays.toString(a));
 
         System.arraycopy(a1, 0, a, 0, a.length);
-
+        
+        System.out.println("Сортировка вставками:");
         begin = System.currentTimeMillis();
         insertionSort();
         end = System.currentTimeMillis();

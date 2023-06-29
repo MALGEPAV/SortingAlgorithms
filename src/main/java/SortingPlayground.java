@@ -17,7 +17,10 @@ public class SortingPlayground {
         System.out.println("Время быстрой сортировки: " + (end - begin) + " ms");
         //System.out.println(Arrays.toString(a));
 
-        System.arraycopy(a1, 0, a, 0, a.length);
+        //System.arraycopy(a1, 0, a, 0, a.length);
+        for (int i = 0; i < a.length; i++) {
+            a[i] = a1[i];
+        }
         
         System.out.println("Сортировка вставками:");
         begin = System.currentTimeMillis();

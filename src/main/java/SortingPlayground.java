@@ -1,9 +1,11 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class SortingPlayground {
     private static int[] a;
     private static int[] a1;
+    private static final Scanner myScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         fillRandom();
@@ -11,7 +13,7 @@ public class SortingPlayground {
         long begin = System.currentTimeMillis();
         quicksort(0, a.length);
         long end = System.currentTimeMillis();
-        System.out.println("Время быстрой сортировки: "+(end-begin)+" ms");
+        System.out.println("Время быстрой сортировки: " + (end - begin) + " ms");
         //System.out.println(Arrays.toString(a));
 
         System.arraycopy(a1, 0, a, 0, a.length);
@@ -19,17 +21,18 @@ public class SortingPlayground {
         begin = System.currentTimeMillis();
         insertionSort();
         end = System.currentTimeMillis();
-        System.out.println("Время сортировки вставками: "+(end-begin)+" ms");
+        System.out.println("Время сортировки вставками: " + (end - begin) + " ms");
         //System.out.println(Arrays.toString(a));
     }
 
     private static void fillRandom() {
-        Random r =  new Random();
-        int n = 100000;
+        System.out.print("Введите размер случайного массива: ");
+        int n = myScanner.nextInt();
         a = new int[n];
         a1 = new int[n];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = r.nextInt(1,100001);
+        Random r = new Random();
+        for (int i = 0; i < n; i++) {
+            a[i] = r.nextInt(1, n + 1);
             a1[i] = a[i];
         }
     }
